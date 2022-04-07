@@ -61,7 +61,6 @@ class MyApp extends StatelessWidget {
           )),
         ),
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(10),
           child: Container(
             child: Column(
               children: [
@@ -74,7 +73,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.all(10),
                   child: Image.asset('./assets/gambar.jpg'),
                 ),
                 Column(
@@ -170,6 +169,7 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
                 Container(
+                  padding: EdgeInsets.all(10),
                   child: Text(
                     '''
             Alkisah di Jawa Tengah ada sebuah kerajaan bernama Pengging. Sang raja mempunyai seorang putra bernama Joko Bandung. Joko Bandung adalah pemuda perkasa dan mempunyai ilmu kesaktian yang tinggi, akan tetapi ia enggan menikah, ia ingin menguasai prambanan.
