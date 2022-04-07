@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     final AudioCache player = AudioCache(fixedPlayer: audioPlayer);
 
     void playSound() async {
-      await player.play('lagu.mp3');
+      await player.play('sound.m4a');
     }
 
     void stopSound() async {
@@ -22,22 +22,34 @@ class MyApp extends StatelessWidget {
       await audioPlayer.pause();
     }
 
+    void speedSound05() async {
+      await audioPlayer.setPlaybackRate(0.5);
+    }
+
     void speedSound1() async {
       await audioPlayer.setPlaybackRate(1.0);
+    }
+
+    void speedSound15() async {
+      await audioPlayer.setPlaybackRate(1.5);
     }
 
     void speedSound2() async {
       await audioPlayer.setPlaybackRate(2.0);
     }
 
+    void speedSound3() async {
+      await audioPlayer.setPlaybackRate(3.0);
+    }
+
     void speedSound4() async {
       await audioPlayer.setPlaybackRate(4.0);
     }
 
-    void speedSound6() async {
-      await audioPlayer.setPlaybackRate(6.0);
+    void speedSound5() async {
+      await audioPlayer.setPlaybackRate(5.0);
     }
-    
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -85,6 +97,15 @@ class MyApp extends StatelessWidget {
                               stopSound();
                             },
                             icon: Icon(Icons.stop)),
+                        TextButton(
+                          onPressed: () {
+                            speedSound1();
+                          },
+                          child: Text(
+                            "1x",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
                       ],
                     ),
                     Row(
@@ -92,10 +113,19 @@ class MyApp extends StatelessWidget {
                       children: [
                         TextButton(
                           onPressed: () {
-                            speedSound1();
+                            speedSound05();
                           },
                           child: Text(
-                            "1x",
+                            "0.5x",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            speedSound15();
+                          },
+                          child: Text(
+                            "1.5x",
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
@@ -110,6 +140,15 @@ class MyApp extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
+                            speedSound3();
+                          },
+                          child: Text(
+                            "3x",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
                             speedSound4();
                           },
                           child: Text(
@@ -119,10 +158,10 @@ class MyApp extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            speedSound6();
+                            speedSound5();
                           },
                           child: Text(
-                            "6x",
+                            "5x",
                             style: TextStyle(color: Colors.black),
                           ),
                         ),
